@@ -54,6 +54,7 @@ body {
 .card__img {
   block-size: 100%;
   inline-size: 100%;
+  font-style: italic;
   object-fit: cover;
   object-position: left;
 }
