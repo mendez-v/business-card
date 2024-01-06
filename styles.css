@@ -1,0 +1,125 @@
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+body, h1, h2, p, figure {
+  margin: 0;
+}
+
+
+body {
+  min-block-size: 100vh;
+  min-block-size: 100svh;
+  display: grid;
+  place-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--clr-4);
+}
+
+:root {
+  --clr-1: #EEF0E5;
+  --clr-2: #B6C4B6;
+  --clr-3: #304D30;
+  --clr-4: #163020;
+  --clr-5: #ff0000;
+  --shadow: 0 .5rem 1rem hsl(0 0% 0% / .25);
+}
+
+.card {
+  inline-size: clamp(21.1rem, 90vw, 35rem);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--clr-1);
+  color: var(--clr-4);
+  border-radius: .6rem;
+  box-shadow: var(--shadow);
+}
+@media (width > 425px) {
+  .card {
+    flex-direction: unset;
+  }
+}
+.card__photo {
+  aspect-ratio: 5/4;
+  border-radius: .6rem;
+  box-shadow: var(--shadow);
+  outline: .15rem solid var(--clr-4);
+  outline-offset: -.5rem;
+  overflow: hidden;
+}
+.card__img {
+  block-size: 100%;
+  inline-size: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+.card__info {
+  text-align: center;
+  text-wrap: balance;
+}
+.card__title {
+  font-size: 1.6rem;
+  transition: transform .3s ease;
+}
+.card__link {
+  color: inherit;
+}
+.card__subtitle {
+  margin-top: .5rem;
+  font-size: 1.2rem;
+  color: var(--clr-3);
+}
+.card__desc {
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+.attr {
+  margin-top: 2rem;
+  font-size: .85rem;
+  text-align: center;
+  color: var(--clr-1);
+}
+.attr__link {
+  margin-inline: .3rem;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+:focus-visible {
+  text-decoration: none;
+  outline: .15rem dotted currentColor;
+  outline-offset: .2rem;
+}
+
+.attr__link::after {
+  content: '';
+  position: absolute;
+  bottom: -.15rem;
+  right: 0;
+  inline-size: 100%;
+  block-size: .1rem;
+  background-color: currentColor;
+  transition: inline-size .3s ease;
+}
+
+
+@media (hover:hover) {
+  .card__title:hover {
+    transform: rotate(-2deg) scale(1.1);
+    color: var(--clr-5);
+  }
+  .attr__link:hover::after {
+    inline-size: 0;
+    left: 0;
+  }
+}
+
+.attr__link:focus-visible::after {
+  inline-size: 0;
+}
