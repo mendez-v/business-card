@@ -31,6 +31,8 @@ This is a solution from one of the projects that is part of the [Frontend Career
 
 [Scrim](https://scrimba.com/scrim/cbGdgwf4) 👀
 
+[Frontend Career Path](https://github.com/mendez-v/frontend-career-path) 👀
+
 ## Built with
 
 🎯 Semantic HTML markup
